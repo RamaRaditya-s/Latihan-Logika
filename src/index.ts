@@ -1,6 +1,7 @@
 import * as readline from "readline";
 import { programPersegiBintang } from "./services/persegiBintang.js";
 import { programPersegiPanjang } from "./services/persegiPanjang.js";
+import { segitigaBintang } from "./services/segitigaBintang.js";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -9,9 +10,10 @@ const rl = readline.createInterface({
 
 console.log("Pilih Program:");
 console.log("1. Persegi Bintang");
-console.log("2. Persegi Panjang\n");
+console.log("2. Persegi Panjang");
+console.log("3. Segitiga Bintang");
 
-rl.question("Masukkan pilihan (1/2): ", (menu) => {
+rl.question("Masukkan pilihan (1/2/3): ", (menu) => {
   if (menu === "1") {
     rl.question("Masukkan ukuran persegi: ", (ans) => {
       const size = parseInt(ans, 10);
@@ -26,6 +28,12 @@ rl.question("Masukkan pilihan (1/2): ", (menu) => {
         programPersegiPanjang(baris, kolom);
         rl.close();
       });
+    });
+  } else if (menu === "3") {
+    rl.question("Masukkan tinggi segitiga: ", (h) => {
+      const tinggi = parseInt(h, 10);
+      segitigaBintang(tinggi);
+      rl.close();
     });
   } else {
     console.log("Pilihan tidak valid.");
