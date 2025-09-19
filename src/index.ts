@@ -10,6 +10,9 @@ import { segitigaAngka3 } from "./services/segitigaAngka3.js";
 import { segitigaAngkaTerbalik1 } from "./services/segitigaAngkaTerbalik1.js";
 import { segitigaAngkaTerbalik2 } from "./services/segitigaAngkaTerbalik2.js";
 import { segitigaAngkaTerbalik3 } from "./services/segitigaAngkaTerbalik3.js";
+import { persegiAngka1 } from "./services/persegiAngka1.js";
+import { persegiAngka2 } from "./services/persegiAngka2.js";
+import { persegiAngka3 } from "./services/persegiAngka3.js";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -24,8 +27,9 @@ console.log("4. Segitiga Bintang Terbalik");
 console.log("5. Belah Ketupat");
 console.log("6. Segitiga Angka");
 console.log("7. Segitiga Angka Terbalik");
+console.log("8. Persegi Angka\n");
 
-rl.question("Masukkan pilihan (1/2/3/4/5/6/7): ", (menu) => {
+rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8): ", (menu) => {
   if (menu === "1") {
     rl.question("Masukkan ukuran persegi: ", (ans) => {
       const size = parseInt(ans, 10);
@@ -114,6 +118,37 @@ rl.question("Masukkan pilihan (1/2/3/4/5/6/7): ", (menu) => {
         rl.question("Masukkan Tinggi Segitiga: ", (t) => {
           const tinggi = parseInt(t, 10);
           segitigaAngkaTerbalik3(tinggi);
+          rl.close();
+        });
+      } else {
+        console.log("Pilihan Tidak Valid");
+        rl.close();
+      }
+    });
+  } else if (menu === "8") {
+    // Pilihan type soal
+    console.log("=== Pilih Jenis Persegi Angka ===");
+    console.log("1. Persegi Angka Type 1");
+    console.log("2. Persegi Angka Type 2");
+    console.log("3. Persegi Angka Type 3");
+
+    rl.question("Masukkan Pilihan (1/2/3): ", (type) => {
+      if (type === "1") {
+        rl.question("Masukkan Besar Persegi: ", (t) => {
+          const besar = parseInt(t, 10);
+          persegiAngka1(besar);
+          rl.close();
+        });
+      } else if (type === "2") {
+        rl.question("Masukkan Besar Persegi: ", (t) => {
+          const besar = parseInt(t, 10);
+          persegiAngka2(besar);
+          rl.close();
+        });
+      } else if (type === "3") {
+        rl.question("Masukkan Besar Persegi: ", (t) => {
+          const besar = parseInt(t, 10);
+          persegiAngka3(besar);
           rl.close();
         });
       } else {
