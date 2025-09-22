@@ -159,12 +159,11 @@ rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8/9): ", (menu) => {
       }
     });
   } else if (menu === "9") {
-    rl.question("Input sisi persegi: ", (t) => {
-      const sisi = parseInt(t, 10);
-      luasPersegi(sisi);
-      rl.close();
-    });
-  } else {
+  rl.question("Input sisi persegi: ", (t) => {
+    luasPersegi(t.trim());
+    rl.close();
+  });
+} else {
     console.log("Pilihan tidak valid.");
     rl.close();
   }
