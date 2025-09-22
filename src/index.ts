@@ -13,6 +13,7 @@ import { segitigaAngkaTerbalik3 } from "./services/segitigaAngkaTerbalik3.js";
 import { persegiAngka1 } from "./services/persegiAngka1.js";
 import { persegiAngka2 } from "./services/persegiAngka2.js";
 import { persegiAngka3 } from "./services/persegiAngka3.js";
+import { luasPersegi } from "./services/luasPersegi.js";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -27,9 +28,10 @@ console.log("4. Segitiga Bintang Terbalik");
 console.log("5. Belah Ketupat");
 console.log("6. Segitiga Angka");
 console.log("7. Segitiga Angka Terbalik");
-console.log("8. Persegi Angka\n");
+console.log("8. Persegi Angka");
+console.log("9. Luas Persegi\n");
 
-rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8): ", (menu) => {
+rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8/9): ", (menu) => {
   if (menu === "1") {
     rl.question("Masukkan ukuran persegi: ", (ans) => {
       const size = parseInt(ans, 10);
@@ -155,6 +157,12 @@ rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8): ", (menu) => {
         console.log("Pilihan Tidak Valid");
         rl.close();
       }
+    });
+  } else if (menu === "9") {
+    rl.question("Input sisi persegi: ", (t) => {
+      const sisi = parseInt(t, 10);
+      luasPersegi(sisi);
+      rl.close();
     });
   } else {
     console.log("Pilihan tidak valid.");
