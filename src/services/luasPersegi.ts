@@ -3,5 +3,5 @@ export function luasPersegi(sisi: number): void {
   console.log("=========================================\n");
 
   const luas = sisi * sisi;
-    console.log(`Luas Persegi dengan sisi ${sisi} adalah: ${luas}`);
+    console.log(`Luas Persegi: ${luas}`);
 }
