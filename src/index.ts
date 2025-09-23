@@ -31,7 +31,7 @@ console.log("6. Segitiga Angka");
 console.log("7. Segitiga Angka Terbalik");
 console.log("8. Persegi Angka");
 console.log("9. Luas Persegi");
-console.log("10. Luas Persegi Panjang");
+console.log("10. Luas Persegi Panjang\n");
 
 rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8/9/10): ", (menu) => {
   if (menu === "1") {
