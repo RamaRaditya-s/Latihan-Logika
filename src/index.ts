@@ -17,6 +17,7 @@ import { luasPersegi } from "./services/luasPersegi.js";
 import { luasPersegiPanjang } from "./services/luasPersegiPanjang.js";
 import { luasSegitiga } from "./services/luasSegitiga.js";
 import { luasLingkaran } from "./services/luasLingkaran.js";
+import { luasBelahKetupat } from "./services/luasBelahKetupat.js"; 
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -35,9 +36,10 @@ console.log("8. Persegi Angka");
 console.log("9. Luas Persegi");
 console.log("10. Luas Persegi Panjang");
 console.log("11. Luas Segitiga");
-console.log("12. Luas Lingkaran\n");
+console.log("12. Luas Lingkaran");
+console.log("13. Luas Belah Ketupat\n");
 
-rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8/9/10/11/12): ", (menu) => {
+rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8/9/10/11/12/13): ", (menu) => {
   if (menu === "1") {
     rl.question("Masukkan ukuran persegi: ", (ans) => {
       const size = parseInt(ans, 10);
@@ -187,6 +189,13 @@ rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8/9/10/11/12): ", (menu) => {
   rl.question("Input jari-jari lingkaran: ", (j) => {
     luasLingkaran(j.trim());
     rl.close();
+  });
+} else if (menu === "13") {
+   rl.question("Input panjang diagonal 1: ", (a) => {
+    rl.question("Input panjang diagonal 2: ", (b) => {
+      luasBelahKetupat(a.trim(), b.trim());
+      rl.close();
+    });
   });
 } else {
     console.log("Pilihan tidak valid.");
