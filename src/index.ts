@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 });
 
 console.log("Pilih Program:");
-console.log("1. Simple Pyramid\n");
+console.log("1. Simple Pyramid");
 console.log("2. Flipped Simple Pyramid\n");
 
 rl.question("Masukkan pilihan (1): ", (menu) => {
