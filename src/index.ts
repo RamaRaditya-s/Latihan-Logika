@@ -11,7 +11,7 @@ console.log("Pilih Program:");
 console.log("1. Simple Pyramid");
 console.log("2. Flipped Simple Pyramid\n");
 
-rl.question("Masukkan pilihan (1): ", (menu) => {
+rl.question("Masukkan pilihan (1/2): ", (menu) => {
   if (menu === "1") {
   rl.question("Masukkan ukuran piramida: ", (ans) => {
       const size = parseInt(ans, 10);
