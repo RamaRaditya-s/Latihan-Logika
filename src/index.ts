@@ -1,6 +1,7 @@
 import * as readline from "readline";
 import { simplePyramid } from "./services/SimplePyramid.js";
 import { flippedSimplePyramid } from "./services/FlippedSimplePyramid.js";
+import { invertedPyramid } from "./services/invertedPyramid.js";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -9,9 +10,10 @@ const rl = readline.createInterface({
 
 console.log("Pilih Program:");
 console.log("1. Simple Pyramid");
-console.log("2. Flipped Simple Pyramid\n");
+console.log("2. Flipped Simple Pyramid");
+console.log("3. Inverted Pyramid\n");
 
-rl.question("Masukkan pilihan (1/2): ", (menu) => {
+rl.question("Masukkan pilihan (1/2/3): ", (menu) => {
   if (menu === "1") {
   rl.question("Masukkan ukuran piramida: ", (ans) => {
       const size = parseInt(ans, 10);
@@ -22,6 +24,12 @@ rl.question("Masukkan pilihan (1/2): ", (menu) => {
   rl.question("Masukkan ukuran piramida terbalik: ", (ans) => {
       const size = parseInt(ans, 10);
       flippedSimplePyramid(size);
+      rl.close();
+    });
+} else if (menu === "3") {
+  rl.question("Masukkan ukuran piramida: ", (ans) => {
+      const size = parseInt(ans, 10);
+      invertedPyramid(size);
       rl.close();
     });
 } else {
