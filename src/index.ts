@@ -2,6 +2,7 @@ import * as readline from "readline";
 import { simplePyramid } from "./services/SimplePyramid.js";
 import { flippedSimplePyramid } from "./services/FlippedSimplePyramid.js";
 import { invertedPyramid } from "./services/invertedPyramid.js";
+import { flippedInvertedPyramid } from "./services/flippedInvertedPyramid.js";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -11,28 +12,35 @@ const rl = readline.createInterface({
 console.log("Pilih Program:");
 console.log("1. Simple Pyramid");
 console.log("2. Flipped Simple Pyramid");
-console.log("3. Inverted Pyramid\n");
+console.log("3. Inverted Pyramid");
+console.log("4. Flipped Inverted Pyramid\n");
 
-rl.question("Masukkan pilihan (1/2/3): ", (menu) => {
+rl.question("Masukkan pilihan (1/2/3/4): ", (menu) => {
   if (menu === "1") {
-  rl.question("Masukkan ukuran piramida: ", (ans) => {
+    rl.question("Masukkan ukuran piramida: ", (ans) => {
       const size = parseInt(ans, 10);
       simplePyramid(size);
       rl.close();
     });
-} else if (menu === "2") {
-  rl.question("Masukkan ukuran piramida terbalik: ", (ans) => {
+  } else if (menu === "2") {
+    rl.question("Masukkan ukuran piramida terbalik: ", (ans) => {
       const size = parseInt(ans, 10);
       flippedSimplePyramid(size);
       rl.close();
     });
-} else if (menu === "3") {
-  rl.question("Masukkan ukuran piramida: ", (ans) => {
+  } else if (menu === "3") {
+    rl.question("Masukkan ukuran piramida: ", (ans) => {
       const size = parseInt(ans, 10);
       invertedPyramid(size);
       rl.close();
     });
-} else {
+  } else if (menu === "4") {
+    rl.question("Masukkan ukuran piramida: ", (ans) => {
+      const size = parseInt(ans, 10);
+      flippedInvertedPyramid(size);
+      rl.close();
+    });
+  } else {
     console.log("Pilihan tidak valid.");
     rl.close();
   }
