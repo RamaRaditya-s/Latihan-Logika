@@ -14,9 +14,10 @@ console.log("Pilih Program:");
 console.log("1. Simple Pyramid");
 console.log("2. Flipped Simple Pyramid");
 console.log("3. Inverted Pyramid");
-console.log("4. Flipped Inverted Pyramid\n");
+console.log("4. Flipped Inverted Pyramid");
+console.log("5. Triangle (Full Pyramid)");
 
-rl.question("Masukkan pilihan (1/2/3/4): ", (menu) => {
+rl.question("Masukkan pilihan (1/2/3/4/5): ", (menu) => {
   if (menu === "1") {
     rl.question("Masukkan ukuran piramida: ", (ans) => {
       const size = parseInt(ans, 10);
