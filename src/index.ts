@@ -3,6 +3,7 @@ import { simplePyramid } from "./services/SimplePyramid.js";
 import { flippedSimplePyramid } from "./services/FlippedSimplePyramid.js";
 import { invertedPyramid } from "./services/invertedPyramid.js";
 import { flippedInvertedPyramid } from "./services/flippedInvertedPyramid.js";
+import { trianglePyramid } from "./services/triangle.js";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -38,6 +39,11 @@ rl.question("Masukkan pilihan (1/2/3/4): ", (menu) => {
     rl.question("Masukkan ukuran piramida: ", (ans) => {
       const size = parseInt(ans, 10);
       flippedInvertedPyramid(size);
+      rl.close();
+    });
+  } else if (menu === "5") {
+    rl.question("Masukkan ukuran piramida: ", (ans) => {
+      trianglePyramid(parseInt(ans, 10));
       rl.close();
     });
   } else {
