@@ -4,7 +4,7 @@ import { flippedSimplePyramid } from "./services/FlippedSimplePyramid.js";
 import { invertedPyramid } from "./services/invertedPyramid.js";
 import { flippedInvertedPyramid } from "./services/flippedInvertedPyramid.js";
 import { trianglePyramid } from "./services/triangle.js";
-import { InvertedTriangle } from "./services/invertedTriangle";
+import { InvertedTriangle } from "./services/invertedTriangle.js";
 
 const rl = readline.createInterface({
   input: process.stdin,
