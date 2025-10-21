@@ -5,6 +5,7 @@ import { invertedPyramid } from "./services/invertedPyramid.js";
 import { flippedInvertedPyramid } from "./services/flippedInvertedPyramid.js";
 import { trianglePyramid } from "./services/triangle.js";
 import { InvertedTriangle } from "./services/invertedTriangle.js";
+import { halfDiamond } from "./services/halfDiamond.js";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -17,9 +18,10 @@ console.log("2. Flipped Simple Pyramid");
 console.log("3. Inverted Pyramid");
 console.log("4. Flipped Inverted Pyramid");
 console.log("5. Triangle (Full Pyramid)");
-console.log("6. InvertedTriangle\n");
+console.log("6. InvertedTriangle");
+console.log("7. Half Diamond\n");
 
-rl.question("Masukkan pilihan (1/2/3/4/5/6): ", (menu) => {
+rl.question("Masukkan pilihan (1/2/3/4/5/6/7): ", (menu) => {
   if (menu === "1") {
     rl.question("Masukkan ukuran piramida: ", (ans) => {
       const size = parseInt(ans, 10);
@@ -52,6 +54,11 @@ rl.question("Masukkan pilihan (1/2/3/4/5/6): ", (menu) => {
   } else if (menu === "6") {
     rl.question("Masukkan ukuran piramida: ", (ans) => {
       InvertedTriangle (parseInt(ans, 10));
+      rl.close();
+    });
+  } else if (menu === "7") {
+    rl.question("Masukkan ukuran pola: ", (ans) => {
+      halfDiamond(parseInt(ans, 10));
       rl.close();
     });
   } else {
