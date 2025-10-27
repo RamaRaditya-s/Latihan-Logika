@@ -9,6 +9,7 @@ import { halfDiamond } from "./services/halfDiamond.js";
 import { flippedHalfDiamond } from "./services/flippedHalfDiamond.js";
 import { diamondPattern } from "./services/diamondPattern.js";
 import { hourglassPattern } from "./services/hourglassPattern.js";
+import { numberPyramid } from "./services/numberPyramid..js";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -25,9 +26,10 @@ console.log("6. InvertedTriangle");
 console.log("7. Half Diamond");
 console.log("8. Flipped Half Diamond");
 console.log("9. Diamond Pattern");
-console.log("10. Hourglass Pattern\n");
+console.log("10. Hourglass Pattern");
+console.log("11. Number Pyramid\n");
 
-rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8/9/10): ", (menu) => {
+rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8/9/10/11): ", (menu) => {
   if (menu === "1") {
     rl.question("Masukkan ukuran piramida: ", (ans) => {
       const size = parseInt(ans, 10);
@@ -80,6 +82,11 @@ rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8/9/10): ", (menu) => {
   } else if (menu === "10") {
     rl.question("Masukkan ukuran pola: ", (ans) => {
       hourglassPattern(parseInt(ans, 10));
+      rl.close();
+    });
+  } else if (menu === "11") {
+    rl.question("Masukkan ukuran pola: ", (ans) => {
+      numberPyramid(parseInt(ans, 10));
       rl.close();
     });
   } else {
