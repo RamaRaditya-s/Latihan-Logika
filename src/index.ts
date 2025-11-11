@@ -12,6 +12,7 @@ import { hourglassPattern } from "./services/hourglassPattern.js";
 import { numberPyramid } from "./services/numberPyramid.js";
 import { rotatedNumberPyramid } from "./services/rotateNumberPyramid.js";
 import { palindromeTriangle } from "./services/palindromeTriangle.js";
+import { alphabetPyramidRight } from "./services/alphabetPyramidRight.js";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -31,9 +32,10 @@ console.log("9. Diamond Pattern");
 console.log("10. Hourglass Pattern");
 console.log("11. Number Pyramid");
 console.log("12. Rotated Number Pyramid");
-console.log("13. Palindrome Triangle\n");
+console.log("13. Palindrome Triangle");
+console.log("14. Alphabet Pyramid Right");
 
-rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8/9/10/11/12/13): ", (menu) => {
+rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8/9/10/11/12/13/14): ", (menu) => {
   if (menu === "1") {
     rl.question("Masukkan ukuran piramida: ", (ans) => {
       const size = parseInt(ans, 10);
@@ -101,6 +103,11 @@ rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8/9/10/11/12/13): ", (menu) => {
   } else if (menu === "13") {
     rl.question("Masukkan ukuran pola: ", (ans) => {
       palindromeTriangle(parseInt(ans, 10));
+      rl.close();
+    });
+  } else if (menu === "14") {
+    rl.question("Masukkan ukuran pola: ", (ans) => {
+      alphabetPyramidRight(parseInt(ans, 10));
       rl.close();
     });
   } else {
