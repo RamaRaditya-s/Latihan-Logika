@@ -13,6 +13,7 @@ import { numberPyramid } from "./services/numberPyramid.js";
 import { rotatedNumberPyramid } from "./services/rotateNumberPyramid.js";
 import { palindromeTriangle } from "./services/palindromeTriangle.js";
 import { alphabetPyramidRight } from "./services/alphabetPyramidRight.js";
+import { continuousAlphabetPyramid } from "./services/continuousAlphabetPyramid.js";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -34,8 +35,9 @@ console.log("11. Number Pyramid");
 console.log("12. Rotated Number Pyramid");
 console.log("13. Palindrome Triangle");
 console.log("14. Alphabet Pyramid Right");
+console.log("15. Continuous Alphabet Pyramid\n");
 
-rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8/9/10/11/12/13/14): ", (menu) => {
+rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8/9/10/11/12/13/14/15): ", (menu) => {
   if (menu === "1") {
     rl.question("Masukkan ukuran piramida: ", (ans) => {
       const size = parseInt(ans, 10);
@@ -108,6 +110,11 @@ rl.question("Masukkan pilihan (1/2/3/4/5/6/7/8/9/10/11/12/13/14): ", (menu) => {
   } else if (menu === "14") {
     rl.question("Masukkan ukuran pola: ", (ans) => {
       alphabetPyramidRight(parseInt(ans, 10));
+      rl.close();
+    });
+  } else if (menu === "15") {
+    rl.question("Masukkan ukuran pola: ", (ans) => {
+      continuousAlphabetPyramid(parseInt(ans, 10));
       rl.close();
     });
   } else {
